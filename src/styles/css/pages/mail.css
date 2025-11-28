@@ -1,0 +1,164 @@
+.mail_title {
+    margin-left: 2%;
+
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.mail_content {
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 90%;
+    height: 95%;
+    background-color: #08181d;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+}
+
+.mail_content>div:nth-child(1) {
+    overflow: auto;
+}
+
+.mail_list {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.mail_list>div:nth-child(1) {
+    font-weight: bold;
+    font-size: 0.8vw;
+    margin-bottom: 1%;
+}
+
+.mail_list>div:nth-child(2) {
+    display: flex;
+}
+
+.mail_list>div:nth-child(2)>div:nth-child(1) {
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+.mail_list>div:nth-child(2)>div:nth-child(2) {
+    font-size: 0.7vw;
+    margin-left: auto;
+}
+
+.mail_selected {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.mail_selected>div:nth-child(1) {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.mail_selected>div:nth-child(2) {
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+.mail_selected>div:nth-child(2)>div:nth-child(2) {
+    margin-left: 5%;
+}
+
+.mail_selected>div:nth-child(2)>div:nth-child(3) {
+    margin-left: auto;
+}
+
+.mail_selected>div:nth-child(3) {
+    margin-top: 2%;
+    font-size: 1vw;
+}
+
+.mail_add {
+    bottom: 5%;
+    right: 10%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    background-color: #1a2f38;
+    border-radius: 3vw;
+    z-index: 99;
+}
+
+.mail_add_text {
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.mail_add:hover {
+    width: 7vw;
+    transition: all 0.2s;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+}
+
+.mail_add:hover .mail_add_text {
+    display: block;
+    transition: all 0.3s;
+}
+
+.mail_add_page {
+    margin-top: 2%;
+}
+
+.mail_add_page_input {
+    width: 100%;
+    font-size: 1vw;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 10% 80%;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+.mail_add_page_input>input {
+    color: white;
+    height: 2vw;
+    width: 100%;
+    border-radius: 0.5vw;
+    background-color: #1a2f38;
+    border: none;
+    font-size: 1vw;
+}
+.mail_add_page_body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.ProseMirror{
+    overflow: auto;
+    height: 60vh;
+    width: 90%;
+    background-color: #1a2f38;
+}
+
+.mail_add_buttons{
+    margin-left: 69%;
+    margin-top: 2%;
+    display: flex;
+}
+.mail_add_buttons > button{
+    width: 6vw;
+    height: 1.5vw;
+    font-size: 1vw;
+    font-weight: bold;
+    color: white;
+    border-radius: 1vw;
+    border: none;
+    background-color: #1a2f38;
+}
+.mail_add_buttons > button:hover{
+    transition: all 0.2s;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+}
+.mail_add_buttons > button:nth-child(2){
+    margin-left: 5%;
+}

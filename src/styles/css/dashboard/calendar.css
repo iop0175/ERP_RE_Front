@@ -1,0 +1,12 @@
+.calendar_content{
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+     --fc-border-color: transparent !important; 
+}
+.fc .fc-toolbar.fc-header-toolbar{
+    margin-bottom: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}

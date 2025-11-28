@@ -1,0 +1,79 @@
+header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.hader_title {
+    font-size: 1vw;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.header_nav {
+    margin-left: 5em;
+    width: 60%;
+}
+
+
+.header_nav>button {
+    border: none;
+    background-color: #08181d;
+    color: #ffffff;
+    padding: 1.5% 2% 1.5% 2%;
+    margin: 0 1% 0 0;
+    border-radius: 2vw;
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+.header_nav>button:hover {
+    transition: 0.2s;
+    background-color: #beff54;
+    color: #08181d;
+}
+
+.header_userBox {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.header_userBox > h2{
+    text-align: center;
+    width: 10vw;
+}
+.header_userBox > button {
+    border: none;
+    background-color: #08181d;
+    color: #ffffff;
+    padding: 1.5% 2% 1.5% 2%;
+    border-radius: 2vw;
+    font-size: 0.8vw;
+    font-weight: bold;
+    margin-left: 2vw;
+    margin-right: 3vw;
+}
+
+.header_userBox > button:hover {
+    transition: 0.2s;
+    background-color: #beff54;
+    color: #08181d;
+}
+.kakaoLogout{
+    text-decoration: none;
+    border: none;
+    background-color: #08181d;
+    color: #ffffff;
+    padding: 1.5% 2% 1.5% 2%;
+    border-radius: 2vw;
+    font-size: 0.8vw;
+    font-weight: bold;
+    margin-left: 2vw;
+    margin-right: 3vw;
+}
+.kakaoLogout:hover{
+    transition: 0.2s;
+    background-color: #beff54;
+    color: #08181d;
+}

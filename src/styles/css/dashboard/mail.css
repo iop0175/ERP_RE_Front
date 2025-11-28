@@ -1,0 +1,9 @@
+.dashboard_mail{
+    width: 30vw;
+    margin-left: 5%;
+    height: 13vw;
+}
+.dashboard_list{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr;
+}

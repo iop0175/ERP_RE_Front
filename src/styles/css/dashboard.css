@@ -1,0 +1,22 @@
+.dashboard_title {
+    font-size: 4vw;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.dashboard_content {
+    background-color: #08181d;
+    margin: 1%;
+
+    border-radius: 2vw;
+}
+
+.dashboard_container {
+    display: flex;
+}
+
+.dashboard_calendar{
+    width: 30vw;
+        height: 20vw;
+    overflow: hidden;
+}

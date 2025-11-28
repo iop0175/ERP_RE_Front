@@ -1,0 +1,9 @@
+.dashboard_approval{
+    width: 28vw;
+    margin-left: 5%;
+    height: 13vw;
+}
+.approval_list{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1fr;
+}

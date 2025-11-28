@@ -1,0 +1,12 @@
+.dashboard_announcement{
+    width: 30vw;
+    margin-left: 5%;
+    height: 13vw;
+}
+.announcement_list{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr;
+}
+.announcement_content{
+    list-style: none;
+}

@@ -1,0 +1,36 @@
+.sidebar{
+    height: 90vh;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar >div:last-child{
+    margin-top: auto;
+    margin-bottom: 5%;
+}
+.sidebar >div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #08181d;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 5vw;
+    margin-top: 2%;
+}
+.sidebar_svg{
+    width: 50%;
+    color: white;
+}
+.sidebar >div:hover {
+    transition: 0.2s;
+    background-color: #beff54;
+    color: #08181d;
+}
+.sidebar >div:hover .sidebar_svg{
+    color: #08181d;
+}
+.active{
+    background-color: #beff54;
+}
