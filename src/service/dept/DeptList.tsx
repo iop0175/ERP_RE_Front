@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const getDeptsByCompanyId = async (token: string, companyId: number) => {
+export const getDeptsByCompanyId = async ( companyId: number) => {
+    const token = sessionStorage.getItem("jwt");
     try {
         const res = await axios.get("http://localhost:9080/api/dept", {
             headers: {

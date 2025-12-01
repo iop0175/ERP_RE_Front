@@ -1,0 +1,38 @@
+.Approval_continer{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.Approval_List > li{
+    list-style: none;
+}
+.Approval_Title{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+.Approval_Content{
+    width: 100%;
+    border: 1px solid;
+}
+.Approval_Inputs{
+    display: flex;
+    align-items: center;
+}
+.Approval_Inputs > input {
+    color: white;
+    height: 2vw;
+    width: 100%;
+    border-radius: 0.5vw;
+    background-color: #1a2f38;
+    border: none;
+    font-size: 1vw;
+
+}
+.Approval_Btns{
+    position: absolute;
+    top: 5%;
+    right: 0;
+}

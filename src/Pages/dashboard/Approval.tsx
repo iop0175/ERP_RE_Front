@@ -34,15 +34,20 @@ const Approval = () => {
                 <div><strong>Title</strong></div>
                 <div>status</div>
             </div>
-            {approval.map((a, index) => {
-                return (
-                    <div key={a.approvalId} className="approval_list">
-                        <div>{index + 1}</div>
-                        <div><strong>{a.title}</strong></div>
-                        <div>{a.status}</div>
-                    </div>
-                )
-            })}
+            {!approval ? (
+                <div></div>
+            ) : (
+                approval.map((a, index) => {
+                    return (
+                        <div key={a.approvalId} className="approval_list">
+                            <div>{index + 1}</div>
+                            <div><strong>{a.title}</strong></div>
+                            <div>{a.status}</div>
+                        </div>
+                    );
+                })
+            )}
+
         </div>
     )
 }

@@ -1,0 +1,41 @@
+.modal_Back{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+}
+
+.Mate_modal_content {
+    top: 15%;
+    left: 20%;
+    position: relative;
+    width: 60%;
+    height: 70%;
+    align-items: center;
+    background-color: black;
+}
+
+.Mate_modal_mate {
+    padding-top: 2%;
+    padding-left: 2%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+}
+.Mate_modal_mate > div {
+    overflow: auto;
+}
+.Mate_modal_btns{
+    position: absolute;
+    right: 5%;
+}
+.Mate_modal_pointer:hover {
+    background-color: #283e48;
+    cursor: pointer;
+}
+.Approval_Users{
+    display:  grid;
+    grid-template-columns: repeat(2,1fr);
+}

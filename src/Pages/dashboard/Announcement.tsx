@@ -35,16 +35,16 @@ const Announcement = () => {
             <h2>Announcement</h2>
             <div className="announcement_content">
                 <div className="announcement_list">
-                            <div>No</div>
-                            <div><strong>Title</strong></div>
-                            <div>createdAt</div>
-                        </div>
-                {announcements.map((a,index) => {
+                    <div>No</div>
+                    <div><strong>Title</strong></div>
+                    <div>createdAt</div>
+                </div>
+                {announcements.map((a, index) => {
                     const date = new Date(a.createdAt);
 
                     return (
                         <div className="announcement_list" key={a.announcementId}>
-                            <div>{index+1}</div>
+                            <div>{index + 1}</div>
                             <div><strong>{a.title}</strong></div>
                             <div>{formatDateNoTime(date)}</div>
                         </div>

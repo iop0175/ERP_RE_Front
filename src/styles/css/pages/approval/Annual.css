@@ -1,0 +1,61 @@
+.Annual {
+    width: 80%;
+    display: grid;
+    margin-left: 10%;
+    grid-template-columns: repeat(12, 1fr);
+}
+.Annual input{
+    border: 1px solid;
+    padding-block:0;
+    padding-inline:0;
+}
+.Annual>div {
+    height: 10vh;
+    position: relative;
+    display: flex;
+    z-index: 0;
+}
+
+.Annual>div>div:nth-child(1) {
+    color: black;
+    z-index: 9;
+    position: absolute;
+    left: 1%;
+}
+
+.Annual>div>:nth-child(2) {
+
+    font-size: 1.5vw;
+    width: 100%;
+    z-index: 0;
+}
+
+.Annual>div {
+    border: 1px solid;
+}
+
+.Annual_Name {
+    grid-column: 1/8;
+}
+
+.Annual_Dept {
+    grid-column: 8/13;
+}
+
+.Annual_StartDate {
+    grid-column: 1/5;
+}
+
+.Annual_EndDate {
+    grid-column: 5/9;
+}
+
+.Annual_TotalDate {
+    grid-column: 9/13;
+}
+.Annual_TotalDate > input{
+    text-align: center;
+}
+.Annual_Reason {
+    grid-column: 1/13;
+}

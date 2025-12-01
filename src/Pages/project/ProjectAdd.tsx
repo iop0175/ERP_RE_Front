@@ -4,6 +4,7 @@ import axios from "axios";
 import { postProject } from "@/service/project/Project";
 import '@/styles/css/project/projectAdd.css'
 import { useNavigate } from "react-router-dom";
+import MateModal from "../modals/MateModal";
 interface User {
     userId: number;
     userName: string;
@@ -22,7 +23,7 @@ interface SelectedUser {
 }
 
 
-const ProjectAdd:React.FC = ({}) => {
+const ProjectAdd: React.FC = ({ }) => {
     const navigate = useNavigate();
     const token = sessionStorage.getItem("jwt");
     const [deptList, setDeptList] = useState<Dept[]>([]);
@@ -31,6 +32,7 @@ const ProjectAdd:React.FC = ({}) => {
     const [filteredDepts, setFilteredDepts] = useState<Dept[]>([]);
     const [projectName, setProjectName] = useState("");
     const [SelectedDept, setSelectedDept] = useState(0);
+    const [modal,setModal] = useState(false);
     const [company, setCompany] = useState(() => {
         const saved = sessionStorage.getItem("company");
         return saved ? JSON.parse(saved) : null;
@@ -40,7 +42,7 @@ const ProjectAdd:React.FC = ({}) => {
         const loadData = async () => {
             try {
                 if (!token) return;
-                const list = await getDeptsByCompanyId(token, company.companyId);
+                const list = await getDeptsByCompanyId(company.companyId);
                 setDeptList(list);
             } catch (error) {
                 console.error(error);
@@ -68,23 +70,6 @@ const ProjectAdd:React.FC = ({}) => {
         setSelectedDept(deptId);
         setFilteredDepts([]);
     };
-
-    const handleSelectUser = (user: User, deptName: string) => {
-        if (!selectedUserList.some(u => u.userId === user.userId)) {
-            setSelectedUserList([...selectedUserList, { ...user, deptName }]);
-        }
-    };
-
-    const handleRemoveUser = (userId: number) => {
-        setSelectedUserList(selectedUserList.filter(u => u.userId !== userId));
-    };
-
-    const handleSelectDeptUsers = (dept: Dept) => {
-        const newUsers = dept.users
-            .filter(user => !selectedUserList.some(u => u.userId === user.userId))
-            .map(user => ({ ...user, deptName: dept.deptName }));
-        setSelectedUserList([...selectedUserList, ...newUsers]);
-    };
     const save = async () => {
         const payload = {
             projectName: projectName,
@@ -103,7 +88,7 @@ const ProjectAdd:React.FC = ({}) => {
     return (
         <div className="Add_Project_content">
             <div>PROJECT ADD</div>
-            <div><button onClick={save}>save</button></div>
+            <div><button onClick={save}>save</button><button onClick={()=>{setModal(prev=>!prev)}}>addUser</button></div>
             <div className="Add_Project_Input" >
                 <div>Project Name</div>
                 <input type="text" style={{ borderRadius: "0.5vw" }} onChange={(e) => setProjectName(e.target.value)} />
@@ -130,44 +115,7 @@ const ProjectAdd:React.FC = ({}) => {
                     ))}
                 </div>
             </div>
-
-            <div className="Add_Project_mate">
-                <div>
-                    <div>All Users</div>
-                    {deptList.map((dept) => (
-                        <div key={dept.deptId}>
-                            <ul>
-                                <strong
-                                    onClick={() => handleSelectDeptUsers(dept)}
-                                >
-                                    {dept.deptName} (Click to add all)
-                                </strong>
-                                {dept.users
-                                    .filter(user => !selectedUserList.some(u => u.userId === user.userId))
-                                    .map((user) => (
-                                        <li className="Add_Project_pointer"
-                                            key={user.userId}
-                                            onClick={() => handleSelectUser(user, dept.deptName)}
-                                        >
-                                            {user.userName}
-                                        </li>
-                                    ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-
-                <div>
-                    <div>Selected Users</div>
-                    <ul>
-                        {selectedUserList.map((user) => (
-                            <li key={user.userId} onClick={() => handleRemoveUser(user.userId)} className="Add_Project_pointer">
-                                {user.userName} ({user.deptName})
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+            {modal && <MateModal setSelectedUserList={setSelectedUserList} selectedUserList={selectedUserList} setModal={setModal}/>}
         </div>
     );
 };

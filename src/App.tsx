@@ -10,6 +10,8 @@ import KakaoSignUp from './Pages/KakaoSignUp';
 import KakaoLogout from './components/kakao/KakaoLogout';
 import ProjectPage from './Pages/project/ProjectPage';
 import Mail from './Pages/mail/Mail';
+import Approval from './Pages/approval/Approval';
+import MateModal from './Pages/modals/MateModal';
 function App() {
   const [token, setToken] = useState(sessionStorage.getItem("jwt"));
   const isLoggedIn = token && token !== "";
@@ -27,7 +29,9 @@ function App() {
             <Route path='/signKakao' element={<KakaoSignUp/>}/>
             <Route path='/main/*' element={<Main/>} />
             <Route path='/project/*' element={<ProjectPage/>}/>
+            <Route path='/approval/*' element={<Approval/>}/>
             <Route path='/mail/*' element={<Mail/>}/>
+            <Route path='/test' element={<MateModal/>}/>
           </Routes>
         </div>
       </div>
