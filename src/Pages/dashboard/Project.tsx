@@ -29,7 +29,6 @@ interface Project {
 const ProjectList:React.FC = ({}) => {
     const navigate = useNavigate();
     const [projects, setProject] = useState<Project[]>([]);
-    const [projectUsers, setProjectUsers] = useState<Users[]>([]);
     const [user, setUser] = useState(() => {
         const saved = sessionStorage.getItem("user");
         return saved ? JSON.parse(saved) : null;

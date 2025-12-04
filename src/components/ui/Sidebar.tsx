@@ -7,6 +7,7 @@ import Setting from '@/styles/SVG/Setting';
 import Time from '@/styles/SVG/Back'
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
+import Project from '@/styles/SVG/Project';
 const Sidebar: React.FC = ({ }) => {
     const [page, setPage] = useState("");
     const location = useLocation();
@@ -21,7 +22,8 @@ const Sidebar: React.FC = ({ }) => {
         { key: "main", icon: <Gra /> },
         { key: "calendar", icon: <Calendar /> },
         { key: "mail", icon: <Mail /> },
-        { key: "approval", icon: <Approval /> },
+        { key: "approval/list", icon: <Approval /> },
+        { key: "project", icon: <Project /> },
         { key: "setting", icon: <Setting /> },
     ];
     return (

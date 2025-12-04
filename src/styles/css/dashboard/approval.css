@@ -7,3 +7,7 @@
     display: grid;
     grid-template-columns: 0.5fr 3fr 1fr;
 }
+.dashboard_approval_content{
+    overflow: auto;
+    height: 8vw;
+}

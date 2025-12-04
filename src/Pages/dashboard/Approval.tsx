@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "@/styles/css/dashboard/approval.css"
 import { getApprovalByDeptId } from "@/service/approval/Approval";
+import { useNavigate } from "react-router-dom";
 interface Approval {
     approvalId: number;
     title: string;
@@ -10,6 +11,7 @@ interface Approval {
 }
 
 const Approval = () => {
+    const navigate = useNavigate();
     const [user, setUser] = useState(() => {
         const saved = sessionStorage.getItem("user");
         return saved ? JSON.parse(saved) : null;
@@ -18,7 +20,7 @@ const Approval = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const list = await getApprovalByDeptId(user.deptId)
+                const list = await getApprovalByDeptId(user.userId)
                 setApproval(list);
             } catch (err) {
                 console.error(err);
@@ -34,19 +36,17 @@ const Approval = () => {
                 <div><strong>Title</strong></div>
                 <div>status</div>
             </div>
-            {!approval ? (
-                <div></div>
-            ) : (
-                approval.map((a, index) => {
+            <div className="dashboard_approval_content">
+                {approval.slice(0,7).map((a, index) => {
                     return (
-                        <div key={a.approvalId} className="approval_list">
+                        <div key={a.approvalId} className="approval_list" onClick={() => navigate("/approval/list", { state: { approvalId: a.approvalId } })}>
                             <div>{index + 1}</div>
                             <div><strong>{a.title}</strong></div>
                             <div>{a.status}</div>
                         </div>
                     );
-                })
-            )}
+                })}
+            </div>
 
         </div>
     )

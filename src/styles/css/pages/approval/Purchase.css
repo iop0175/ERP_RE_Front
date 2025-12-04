@@ -1,0 +1,70 @@
+.purchase {
+    width: 80%;
+    display: grid;
+    margin-left: 10%;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.purchase input {
+    border: 1px solid;
+    padding-block: 0;
+    padding-inline: 0;
+}
+.purchase_itemList{
+    position: relative;
+    display: flex;
+    z-index: 0;
+    border: 1px solid;
+}
+.purchase > div:not(:nth-child(1)) {
+    height: 10vh;
+    position: relative;
+    display: flex;
+    z-index: 0;
+    border: 1px solid;
+}
+
+.purchase > div:not(:nth-child(1)) > div:nth-child(1) {
+    color: black;
+    z-index: 9;
+    position: absolute;
+    left: 1%;
+}
+.purchase_addItem{
+    display: flex;
+    border: 1px solid;
+}
+.purchase_itemRow{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    position: relative;
+}
+.itemRow_delete{
+    position: absolute;
+    right: 2%;
+}
+.purchase > div:not(:nth-child(1)) > :nth-child(2) {
+    font-size: 1.5vw;
+    width: 100%;
+    z-index: 0;
+}
+
+.purchase > div:nth-child(1),
+.purchase > div:nth-child(2),
+.purchase > div:nth-child(3),
+.purchase > div:nth-child(4) {
+    grid-column: 1 / 13;
+}
+
+.purchase_itemList {
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase_additme {
+    display: flex;
+}
+
+.purchase_additme > div {
+    font-size: 1vw;
+}

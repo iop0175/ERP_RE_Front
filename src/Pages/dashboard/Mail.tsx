@@ -27,6 +27,7 @@ const Mail = () => {
             try {
                 const list = await getMailByUserId(user.userId);
                 setMail(list);
+                console.log(list)
             } catch (err) {
                 console.error(err);
             }

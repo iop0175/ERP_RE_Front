@@ -14,28 +14,67 @@
     width: 60%;
     height: 70%;
     align-items: center;
-    background-color: black;
+    background-color: #142e37;
+    border-radius: 0.5vw;
 }
 
 .Mate_modal_mate {
-    padding-top: 2%;
-    padding-left: 2%;
+    margin-left: 10%;
+    padding-top: 5%;
+    width: 80%;
     display: grid;
     grid-template-columns: 40% 60%;
-    width: 100%;
+    height: 90%;
+    overflow: auto;
 }
 .Mate_modal_mate > div {
+    border: 1px solid;
     overflow: auto;
 }
 .Mate_modal_btns{
     position: absolute;
     right: 5%;
+    top: 2%;
+}
+.Mate_modal_btns > button{
+    display: flex;
+    align-items: center;
+    background-color: #0d2830;
+    border: none;
+    color: white;
+}
+.Mate_modal_btns > button:hover{
+    transition: all 0.2s;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+}
+.Mate_modal_pointer{
+    width: 96%;
+    list-style: none;
+    margin-left: 2%;
 }
 .Mate_modal_pointer:hover {
     background-color: #283e48;
     cursor: pointer;
 }
 .Approval_Users{
+    color: black;
+    background-color: white;
+    border-top: 1px solid;
+    width: 80%;
+    margin-left: 10%;
     display:  grid;
     grid-template-columns: repeat(2,1fr);
+}
+.Approval_Users > div:nth-child(1){
+    border-right:1px solid ;
+}
+.Approval_Users > div{
+    border: 1px solid white;
+    
+}
+.Mate_modal_List_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1vw;
+    border: 1px solid;
 }
