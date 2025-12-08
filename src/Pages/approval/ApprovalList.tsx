@@ -1,4 +1,4 @@
-import { getApprovalByDeptId } from "@/service/approval/Approval";
+import { getApprovalByDeptId, putApproval } from "@/service/approval/Approval";
 import { useEffect, useState } from "react";
 import "@/styles/css/pages/approval/approval.css"
 import { formatDate } from "@/components/date/FormatDate";
@@ -69,6 +69,7 @@ const Approval = () => {
         }
     }, [approvalList, approvalId]);
 
+
     useEffect(() => {
         if (!user) return;
 
@@ -86,6 +87,18 @@ const Approval = () => {
 
         fetchData();
     }, [user]);
+    const ApprovalLine = async (line: any,status:Number) => {
+        try {
+            const updated = { ...line, status: status };
+            const refreshed = await putApproval(updated);
+            console.log(refreshed);
+            setApprovalList(refreshed);
+
+            alert("Approval!!");
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <>
@@ -118,7 +131,6 @@ const Approval = () => {
                     <div className="Approval_Title">Approval Info</div>
                     <div className="Approval_Content">
                         <button onClick={() => navigate("../add")}>New Approval</button>
-
                         {loading ? (
                             <div>Loading approval details...</div>
                         ) : selectedApproval ? (
@@ -133,7 +145,7 @@ const Approval = () => {
                                             line => line.approvalType === Number(type)
                                         );
                                         if (lines.length === 0) return null;
-                                        if (type == String(9)) return;
+                                        if (type == String(9)) return null;
                                         return (
                                             <div key={type}>
                                                 <strong>{label}</strong>
@@ -141,6 +153,8 @@ const Approval = () => {
                                                     <div key={line.lineId}>
                                                         <div>{line.approver.userName}</div>
                                                         <div>{ApprovalStatus[line.status]}</div>
+                                                        {user.userId == line.approver.userId && line.status === 1 && selectedApproval.status != 3 && 
+                                                        <div><button onClick={() => ApprovalLine(line,2)}>Approval</button><button onClick={() => ApprovalLine(line,3)}>Rejected</button></div>}
                                                     </div>
                                                 ))}
                                             </div>
@@ -157,9 +171,9 @@ const Approval = () => {
                                         return (
                                             <div key={type}>
                                                 <strong>{label}</strong>
-                                                <div style={{display:"flex"}}>
+                                                <div style={{ display: "flex" }}>
                                                     {lines.map(line => (
-                                                        <div key={line.lineId} style={{marginRight:"2%"}}>
+                                                        <div key={line.lineId} style={{ marginRight: "2%" }}>
                                                             {line.approver.userName}
                                                         </div>
                                                     ))}

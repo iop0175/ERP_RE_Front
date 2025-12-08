@@ -129,7 +129,7 @@ const Mail = () => {
             key={mail.mailId}
             onClick={() => setSelectedMailId(mail.mailId)}
           >
-            <div>{mail.senderId}</div>
+            <div>{mail.sender.userName}</div>
             <div>
               <div>{mail.subject}</div>
               <div>{formatDate(new Date(mail.sendAt))}</div>

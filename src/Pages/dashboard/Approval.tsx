@@ -28,6 +28,12 @@ const Approval = () => {
         }
         fetchData();
     }, [])
+    const ApprovalStatus: Record<number, string> = {
+        0: "Waiting",
+        1: "Pending",
+        2: "Approved",
+        3: "Rejected",
+    };
     return (
         <div className="dashboard_approval">
             <h2>Approval</h2>
@@ -37,12 +43,12 @@ const Approval = () => {
                 <div>status</div>
             </div>
             <div className="dashboard_approval_content">
-                {approval.slice(0,7).map((a, index) => {
+                {approval.slice(0, 7).map((a, index) => {
                     return (
                         <div key={a.approvalId} className="approval_list" onClick={() => navigate("/approval/list", { state: { approvalId: a.approvalId } })}>
                             <div>{index + 1}</div>
                             <div><strong>{a.title}</strong></div>
-                            <div>{a.status}</div>
+                            <div>{ApprovalStatus[Number(a.status)]}</div>
                         </div>
                     );
                 })}

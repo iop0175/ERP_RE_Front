@@ -39,7 +39,7 @@ const Announcement = () => {
                     <div><strong>Title</strong></div>
                     <div>createdAt</div>
                 </div>
-                {announcements.map((a, index) => {
+                {announcements.slice(0,7).map((a, index) => {
                     const date = new Date(a.createdAt);
 
                     return (

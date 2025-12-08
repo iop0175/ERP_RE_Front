@@ -43,7 +43,7 @@ const Mail = () => {
                 <div>SendAt</div>
                 <div>Sender</div>
             </div>
-            {mail.map((m, index) => {
+            {mail.slice(0,7).map((m, index) => {
                 const date = new Date(m.sendAt);
                 return (
                     <div key={m.mailId} className="dashboard_list" onClick={()=>{ navigate(`/mail`, {state: {m}})}}>
